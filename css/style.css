@@ -1,0 +1,825 @@
+/*@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap&subset=cyrillic-ext');*/
+/* &display=swap&subset=cyrillic-ext */
+
+@font-face {
+	font-family: "Roboto";
+	src: url("../fonts/Roboto-Black.woff2") format("woff2"), url("../fonts/Roboto-Black.woff") format("woff");
+	font-weight: 900;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Roboto";
+	src: url("../fonts/Roboto-Medium.woff2") format("woff2"), url("../fonts/Roboto-Medium.woff") format("woff");
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Roboto";
+	src: url("../fonts/Roboto-Bold.woff2") format("woff2"), url("../fonts/Roboto-Bold.woff") format("woff");
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Roboto";
+	src: url("../fonts/Roboto-Regular.woff2") format("woff2"), url("../fonts/Roboto-Regular.woff") format("woff");
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+/*font-family: 'Roboto', sans-serif;*/
+/* 400 500 700 900 */
+
+/* font-family: 'Abril Fatface', cursive; */
+/* 400 */
+/*.wrapper {
+}*/
+.header {
+	padding: 30px 100px;
+	background: rgb(35, 145, 20);
+	text-align: center;
+}
+.nav-list__item {
+	display: inline-block;
+	padding: 5px;
+	margin: 0px 70px 0px 70px;
+}
+.nav-list__item a {
+	color: #fff;
+	display: inline-block;
+	padding: 10px 20px;
+}
+
+.main {
+	padding: 0;
+	background: linear-gradient(to bottom, rgb(119, 158, 177) 0%, rgb(40, 111, 133) 50%, rgb(88, 108, 116) 100%);
+}
+
+.sky {
+	width: 100%;
+	height: 300px;
+}
+.moon{
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	background: rgb(184, 174, 43);
+	overflow: hidden;
+	display: inline-block;
+	transform: translate(940px, 45px);
+}
+.moon::before{
+	content: "";
+	width: 100px;
+	height: 100px;
+	display: inline-block;
+	border-radius: 50%;
+	background: #6392a6;
+	transform: translate(-20px, 6px);
+}
+.car-container {
+	width: 800px;
+	height: 240px;
+	position: relative;
+	top: 600px;
+	left: 0px;
+	z-index: 10;
+
+	animation: car-movement 18s linear 1.5 0s forwards;
+}
+
+.cabin {
+	position: relative;
+}
+
+.cabin-up {
+	border: 1px solid #000;
+	width: 125px;
+	height: 73px;
+	border-radius: 28px 80px 0px 0px;
+	border-bottom: none;
+	transform: translate(408px, 17px);
+	background: rgb(62, 92, 103);
+	box-shadow: 0px 24px 5px -19px rgba(168, 210, 225, 0.86) inset;
+}
+
+.cabin-up::before {
+	content: "";
+	position: absolute;
+	width: 100px;
+	height: 65px;
+	border: 3px solid #000;
+	border-radius: 16px 80px 0px 0px;
+	top: 9px;
+	left: 14px;
+	border-bottom: none;
+	box-shadow: 0px -8px 3px 0px rgba(155, 189, 202, 0.79) inset;
+}
+.cabin-up::after {
+	content: "";
+	position: absolute;
+	width: 80px;
+	height: 48px;
+	border: 4px solid #000;
+	border-radius: 16px 80px 0px 0px;
+	top: 22px;
+	left: 22px;
+	background: linear-gradient(
+		to bottom,
+		rgba(246, 248, 249, 1) 0%,
+		rgba(215, 222, 227, 1) 26%,
+		rgba(215, 222, 227, 1) 26%,
+		rgba(229, 235, 238, 1) 44%,
+		rgba(215, 222, 227, 1) 58%,
+		rgba(246, 248, 249, 1) 80%,
+		rgba(245, 247, 249, 1) 100%
+	);
+	box-shadow: 30px -28px 7px -21px rgba(0, 0, 0, 0.65) inset;
+}
+.cabin-down {
+	border: 1px solid transparent;
+	width: 130px;
+	height: 99px;
+	border-top: none;
+	border-right: none;
+	border-radius: 0px 0px 3px 3px;
+	font-size: 13px;
+	font-weight: 400;
+	font-family: "Abril Fatface", cursive;
+	letter-spacing: 1.5px;
+	text-align: center;
+	padding: 30px 0px 0px 0px;
+	color: rgb(224, 217, 185);
+	transform: translate(408px, 17px);
+	background: rgb(62, 92, 103);
+}
+
+.cabin-down::before {
+	content: "";
+	border: 3px solid #000;
+	width: 100px;
+	height: 91px;
+	position: absolute;
+	top: 0px;
+	left: 14px;
+	border-radius: 0px 0px 8px 8px;
+	border-top: none;
+
+	box-shadow: 0px 24px 5px -19px rgba(155, 189, 202, 0.79) inset;
+}
+.cabin-down::after {
+	content: "";
+	width: 20px;
+	height: 5px;
+	position: absolute;
+	top: 12px;
+	left: 30px;
+	border-radius: 50%;
+	background: linear-gradient(
+		to bottom,
+		rgba(246, 248, 249, 1) 0%,
+		rgba(215, 222, 227, 1) 26%,
+		rgba(215, 222, 227, 1) 26%,
+		rgba(229, 235, 238, 1) 44%,
+		rgba(215, 222, 227, 1) 58%,
+		rgba(246, 248, 249, 1) 80%,
+		rgba(245, 247, 249, 1) 100%
+	);
+}
+.cabin__key {
+	width: 5px;
+	height: 5px;
+	position: absolute;
+	top: 113px;
+	left: 438px;
+	border-radius: 50%;
+	background: rgb(0, 0, 0);
+	z-index: 2;
+}
+
+/* ---------------------------------------car-front */
+.car-body-front {
+	position: relative;
+	border: 1px solid rgb(161, 9, 9);
+}
+.engine {
+	position: relative;
+	width: 153px;
+	height: 99px;
+	border: 1px solid #000;
+	border-left-color: rgb(0, 0, 0);
+	border-left-style: solid;
+	border-left-width: 1px;
+	border-radius: 0px 30px 0px 0px;
+	border-left: none;
+	transform: translate(532px, -82px);
+	z-index: 0;
+
+	background: rgb(62, 92, 103);
+	box-shadow: 0px 24px 5px -19px rgba(168, 210, 225, 0.86) inset;
+}
+.ventilation {
+	width: 31px;
+	height: 12px;
+	border-left: 4px solid rgb(48, 44, 44);
+	border-right: 4px solid rgb(48, 44, 44);
+	transform: translate(10px, 10px);
+	border-radius: 3px;
+}
+.ventilation::before {
+	content: "";
+	width: 4px;
+	height: 12px;
+	display: inline-block;
+	background: rgb(48, 44, 44);
+	transform: translate(5px, -2px);
+	border-radius: 3px;
+}
+.ventilation::after {
+	content: "";
+	width: 4px;
+	height: 12px;
+	display: inline-block;
+	background: rgb(48, 44, 44);
+	transform: translate(10px, -2px);
+	border-radius: 3px;
+}
+.over-wheel-front {
+	position: relative;
+	width: 163px;
+	height: 75px;
+	border-radius: 200px 110px 13px 0px;
+	border: 2px solid #000;
+	border-radius: 200px 110px 15px 0px;
+	transform: translate(0px, 16px);
+	z-index: 5;
+
+	background: rgb(62, 92, 103);
+	box-shadow: 0px 24px 5px -19px rgba(168, 210, 225, 0.86) inset;
+}
+.front-glass {
+	position: relative;
+	width: 25px;
+	height: 25px;
+	border: 1px solid #000;
+	border-radius: 49% 51% 100% 0% / 100% 100% 0% 0%;
+	transform: translate(113px, -16px) rotate(-90deg);
+	background: #fff;
+	z-index: 0;
+	background: rgb(62, 92, 103);
+	box-shadow: -22px 13px 5px -19px rgba(168, 210, 225, 0.86) inset;
+}
+.front-glass::before {
+	content: "";
+	position: absolute;
+	border-bottom: 465px solid rgba(250, 209, 4, 0.78);
+	border-left: 50px solid transparent;
+	border-right: 50px solid transparent;
+	height: 0px;
+	width: 123px;
+	top: 22px;
+	left: -62.5px;
+	z-index: 5;
+	transform: skew(-3deg);
+	opacity: 1;
+	transition: 0.3s;
+	border-bottom-right-radius: 50px;
+	border-bottom-left-radius: 50px;
+	box-shadow: -1px 80px 7px -6px rgba(250, 209, 4, 0.78);
+	animation: front-light 31s linear 1 0s forwards;
+}
+.front-glass:hover::before {
+	opacity: 1;
+}
+.front-glass::after {
+	content: "";
+	width: 25px;
+	height: 10px;
+	display: inline-block;
+	border: 1px solid #000;
+	border-radius: 7px;
+	transform: translate(29px, 17px);
+	background: linear-gradient(
+		to right,
+		rgba(242, 246, 248, 1) 0%,
+		rgba(216, 225, 231, 1) 22%,
+		rgba(181, 198, 208, 1) 88%,
+		rgba(224, 239, 249, 1) 100%
+	);
+	border-radius: 100% 0% 55% 45% / 59% 0% 100% 41%;
+	transform: translate(-1.4px, 16px) rotate(9deg);
+}
+.over-wheel-inner {
+	width: 100px;
+	height: 58px;
+	border: 2px solid #000;
+	border-radius: 50%;
+	border-radius: 200px 200px 0px 0px;
+	transform: translate(50px, -10px);
+	background: rgba(63, 48, 48, 0.767);
+}
+.wheel-front {
+	position: absolute;
+	top: 42px;
+	left: 48px;
+	width: 90px;
+	height: 90px;
+	border-radius: 50%;
+	border: 13px solid #000;
+	z-index: 5;
+	outline: 0.7px dashed;
+	animation: wheels 2s linear 13.5 normal 0s none;
+}
+
+.wheel-front::before {
+	content: "";
+	width: 65px;
+	height: 65px;
+	border-radius: 50%;
+	display: inline-block;
+	background: linear-gradient(
+		to bottom,
+		rgba(242, 246, 248, 1) 0%,
+		rgba(216, 225, 231, 1) 41%,
+		rgba(181, 198, 208, 1) 74%,
+		rgba(181, 198, 208, 1) 93%,
+		rgba(224, 239, 249, 1) 100%
+	);
+	transform: translate(0px, 0px);
+}
+.wheel-front__item {
+	position: absolute;
+	left: 57px;
+	top: 57px;
+	background: linear-gradient(
+		45deg,
+		rgba(174, 188, 191, 1) 0%,
+		rgba(10, 14, 10, 1) 8%,
+		rgba(110, 119, 116, 1) 22%,
+		rgba(110, 119, 116, 1) 22%,
+		rgba(110, 119, 116, 1) 93%,
+		rgba(10, 14, 10, 1) 94%,
+		rgba(110, 119, 116, 1) 97%,
+		rgba(10, 8, 9, 1) 100%
+	);
+}
+.disk {
+	width: 43px;
+	height: 43px;
+	background: rgb(59, 57, 57);
+	border-radius: 50%;
+	transform: translate(11px, -57px);
+}
+.disk__center {
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	background: rgb(167, 121, 121);
+	transform: translate(11px, 12px);
+}
+
+/* ------------------------------car-body-back */
+
+.back-body {
+	width: 235px;
+	height: 85px;
+	border: 2px solid #000;
+	position: relative;
+	transform: translate(173px, -168px);
+	background: #3e5c67;
+}
+.back-body::before {
+	content: "";
+	position: absolute;
+	top: -2px;
+	left: -10px;
+	border: 1px solid #000;
+	width: 243px;
+	height: 10px;
+	background: #000;
+}
+.back-body::after {
+	content: "";
+	width: 269px;
+	height: 7px;
+	display: inline-block;
+	border: 2px solid #000;
+	transform: translate(141px, -112px);
+	background: rgb(62, 92, 103);
+}
+.weight {
+	font-family: "Abril Fatface", cursive;
+	color: rgb(128, 63, 63);
+	font-size: 16px;
+	padding: 35px 25px 0px;
+	width: 190px;
+	height: 83px;
+	border: 1px solid #000;
+	background: url("../img/canada.png") center / cover no-repeat, url("../img/board.png") center / cover no-repeat;
+	transform: translate(20px, -114px);
+	position: relative;
+	z-index: 0;
+	transition: 0.4s;
+}
+.weight:hover {
+	transform: translate(20px, -190px) scale(1.2, 1.3);
+	border: 2px solid #ffd900c7;
+	box-shadow: 0px 0px 10px 9px #ffd900c7;
+	font-size: 18px;
+	padding: 20px 0px 0px 0px;
+	text-align: center;
+	color: rgb(99, 8, 8);
+	letter-spacing: 1.5px;
+}
+.first-parallel {
+	z-index: 5;
+	position: relative;
+	width: 240px;
+	height: 15px;
+	border: 1px solid #000;
+	background: rgb(211, 117, 55);
+	transform: translate(-10px, -50px);
+}
+.first-parallel::before {
+	position: relative;
+	width: 12px;
+	height: 55px;
+	content: "";
+	border: 1px solid #000;
+	display: inline-block;
+	transform: translate(8px, -7px);
+	background: rgb(150, 84, 40);
+}
+.first-parallel::after {
+	position: relative;
+	width: 12px;
+	height: 55px;
+	content: "";
+	border: 1px solid #000;
+	display: inline-block;
+	transform: translate(212px, -7px);
+	background: rgb(150, 84, 40);
+}
+.second-parallel {
+	z-index: 5;
+	position: relative;
+	width: 240px;
+	height: 15px;
+	border: 1px solid #000;
+	background: rgb(211, 117, 55);
+	transform: translate(-10px, -40px);
+}
+.second-parallel::before {
+	position: relative;
+	width: 8px;
+	height: 55px;
+	content: "";
+	border: 1px solid #000;
+	display: inline-block;
+	transform: translate(71px, -32px);
+	background: rgb(150, 84, 40);
+}
+.second-parallel::after {
+	position: relative;
+	width: 8px;
+	height: 55px;
+	content: "";
+	border: 1px solid #000;
+	display: inline-block;
+	transform: translate(152px, -32px);
+	background: rgb(150, 84, 40);
+}
+.wheel-front__back-part {
+	background: linear-gradient(
+		45deg,
+		rgba(174, 188, 191, 1) 0%,
+		rgba(10, 14, 10, 1) 8%,
+		rgba(110, 119, 116, 1) 22%,
+		rgba(110, 119, 116, 1) 22%,
+		rgba(110, 119, 116, 1) 93%,
+		rgba(10, 14, 10, 1) 94%,
+		rgba(110, 119, 116, 1) 97%,
+		rgba(10, 8, 9, 1) 100%
+	);
+}
+.over-wheel-back {
+	width: 170px;
+	height: 75px;
+	border-radius: 70% 30% 100% 0% / 100% 100% 0% 0%;
+	border: 2px solid #000;
+	transform: translate(0px, -99px);
+	background: rgb(62, 92, 103);
+	box-shadow: 0px 24px 5px -19px rgba(168, 210, 225, 0.86) inset;
+}
+.over-wheel-back::before {
+	content: "";
+	display: inline-block;
+	width: 10px;
+	height: 20px;
+	border-radius: 5px;
+	border: 1px solid rgba(0, 0, 0, 0.493);
+	transform: translate(-19px, 59px);
+	background: linear-gradient(
+		to right,
+		rgba(242, 246, 248, 1) 0%,
+		rgba(216, 225, 231, 1) 22%,
+		rgba(181, 198, 208, 1) 88%,
+		rgba(224, 239, 249, 1) 100%
+	);
+}
+.over-wheel-back::after {
+	content: "";
+	display: inline-block;
+	width: 9px;
+	height: 8px;
+	border: 1px solid rgba(0, 0, 0, 0.39);
+	transform: translate(-10px, -21px);
+	background: linear-gradient(
+		to right,
+		rgba(242, 246, 248, 1) 0%,
+		rgba(216, 225, 231, 1) 22%,
+		rgba(181, 198, 208, 1) 88%,
+		rgba(224, 239, 249, 1) 100%
+	);
+}
+.back-glass {
+	width: 0;
+	height: 0;
+	border-top: 0px solid transparent;
+	border-left: 27px solid red;
+	border-bottom: 16px solid transparent;
+	position: absolute;
+	top: 14px;
+	left: 22px;
+	transition: 0.2s;
+}
+.back-glass::before {
+	content: "";
+	display: inline-block;
+	width: 1px;
+	height: 1px;
+	background: rgb(0, 0, 0);
+	border-radius: 10px 0px 0px 10px;
+	box-shadow: 0px 0px 0px 0px rgb(22, 170, 196);
+	transform: translate(-109px, 49px);
+	animation: smoke 6s linear 3s 5;
+}
+
+.back-glass:hover {
+	box-shadow: -39px 0px 30px 8px rgba(250, 9, 9, 1);
+}
+.over-wheel-inner-back {
+	width: 100px;
+	height: 58px;
+	border-radius: 50%;
+	border-radius: 200px 200px 0px 0px;
+	transform: translate(41px, -8px);
+	border: 2px solid #000;
+	background: rgba(63, 48, 48, 0.767);
+}
+
+/* ---------------------------------------------------road */
+
+.relief__item1 {
+	position: absolute;
+	top: -60px;
+	left: 86px;
+	width: 500px;
+	height: 150px;
+	border-radius: 30% 70% 100% 0% / 43% 26% 74% 57%;
+	background: rgb(46, 192, 10);
+	transform: translate(0px, 90px) rotate(12deg);
+}
+.relief__item2 {
+	position: absolute;
+	top: -200px;
+	left: 752px;
+	width: 600px;
+	height: 350px;
+	border-radius: 79% 21% 100% 0% / 43% 100% 0% 57%;
+	background: rgb(46, 192, 10);
+	transform: translate(0px, 90px) rotate(12deg);
+}
+.tree {
+	position: relative;
+}
+
+.up-tree {
+	position: relative;
+	width: 100px;
+	height: 80px;
+	top: -60px;
+	left: 620px;
+}
+.up-tree__item1 {
+	position: absolute;
+	top: 28px;
+	left: -49px;
+	width: 80px;
+	height: 70px;
+	border-radius: 50%;
+	background: #3dbb0b;
+	z-index: 1;
+}
+.up-tree__item2 {
+	position: absolute;
+	top: 48px;
+	left: 17px;
+	width: 100px;
+	height: 80px;
+	border-radius: 50%;
+	background: #3dbb0b;
+	z-index: 2;
+}
+.up-tree__item3 {
+	position: absolute;
+	top: 53px;
+	left: -14px;
+	width: 40px;
+	height: 60px;
+	border-radius: 50%;
+	background: #3dbb0b;
+	z-index: 3;
+}
+.tree__down {
+	position: absolute;
+	left: 640px;
+	top: 0px;
+	width: 30px;
+	height: 100px;
+	background: rgb(134, 55, 10);
+}
+.road {
+	perspective: 250px;
+}
+.roadside-left {
+	width: 150%;
+	height: 100px;
+	transform: translate(0px, 40px);
+	background: url("../img/gr.png") 50% repeat-x;
+}
+
+.roadside-right{
+	width: 150%;
+	height: 100px;
+	transform: translate(0px, 30px);
+	background: url("../img/gr.png") 50% repeat-x;
+}
+.road__item {
+	width: 150%;
+	height: 400px;
+	background: url("../img/asphalt.png") 50% / cover no-repeat;
+	transform: rotateX(10deg);
+	transform: translate(10px, 10px);
+	position: relative;
+	top: 20px;
+	left: -10%;
+}
+.road__item::before {
+	width: 100%;
+	height: 10px;
+	content: "";
+	display: inline-block;
+	background: rgb(196, 192, 192);
+	transform: translate(10px, 10px);
+	position: relative;
+	top: 31%;
+}
+.road__item::after {
+	width: 100%;
+	height: 10px;
+	content: "";
+	display: inline-block;
+	background: rgb(196, 192, 192);
+	transform: translate(10px, 10px);
+	position: relative;
+	top: 23%;
+}
+
+.road-sign {
+	color: #fff;
+	font-weight: 700;
+	text-align: center;
+	position: relative;
+	display: inline-block;
+	left:50%;
+	top: -200px;
+}
+.road-sign__board {
+	width: 200px;
+	height: 120px;
+	padding: 25px;
+	background: rgb(9, 29, 209);
+	border-radius: 20px;
+	line-height: 2;
+	border: 5px solid rgb(198, 245, 242);
+}
+.road-sign__board::after{
+	content: "";
+	display: inline-block;
+	width: 42px;
+	height: 20px;
+	background: #000;
+	transform: translate(0px, 48px) rotate(-45deg) skew(-45deg);
+}
+.road-sign__pillar {
+	width: 30px;
+	height: 200px;
+	display: inline-block;
+	background: #fff;
+}
+.road-sign__pillar::before{
+	content: "";
+	display: inline-block;
+	width: 42px;
+	height: 20px;
+	background: #000;
+	transform: translate(-6px, 75px) rotate(-45deg) skew(-45deg);
+} 
+.road-sign__pillar::after{
+	content: "";
+	display: inline-block;
+	width: 42px;
+	height: 20px;
+	background: #000;
+	transform: translate(-6px, 106px) rotate(-45deg) skew(-45deg);
+} 
+
+/* ----------------------------------animation */
+@keyframes car-movement {
+	0% {
+		left: -50%;
+	}
+	100% {
+		left: 100%;
+	}
+}
+.car-container:hover{
+	animation-play-state: paused;
+}
+
+@keyframes wheels {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes front-light{
+	0%{
+		opacity: 1;
+	}
+	50%{
+		opacity: 1;
+	}
+	80%{
+		opacity: 1;
+	}
+	95%{
+		opacity: 1;
+	}
+	99%{
+		opacity: 1;
+	}
+	100%{
+		opacity: 0;
+	}
+}
+
+@keyframes smoke {
+	0% {
+		box-shadow: -20px 5px 20px 25px rgb(56, 50, 50);
+	}
+	30% {
+		box-shadow: -30px -50px 50px 55px rgb(68, 60, 60);
+	}
+	60% {
+		box-shadow: -40px -10px 70px 75px rgb(68, 61, 61);
+	}
+	70% {
+		box-shadow: -30px -5px 40px 45px rgb(87, 80, 80);
+	}
+	100% {
+		box-shadow: -20px 5px 20px 25px rgb(85, 75, 75);
+	}
+}
+.car-container:hover .wheel-front,
+.car-container:hover .front-glass::before,
+.car-container:hover .back-glass::before {
+	animation-play-state: paused;
+}
+
+/* footer */
+.footer {
+	padding: 30px 100px;
+	background: rgb(29, 8, 146);
+	text-align: center;
+}
